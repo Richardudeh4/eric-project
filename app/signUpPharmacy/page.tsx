@@ -8,7 +8,7 @@ import { Form, FormField ,FormItem, FormLabel, FormControl, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { CheckBox } from "@/components/checkbox";
 import { Button } from "@/components/ui/button";
-import { DropDown } from "./components/dropdown";
+import { DropDown } from "../signUpBuyer/components/dropdown";
 import Link from "next/link";
 
 
@@ -25,7 +25,7 @@ const formSchema = z.object({
   })
 })
 
-const SignUp = () => {
+const SignUpBuyer = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -44,6 +44,18 @@ const SignUp = () => {
                 </div>
                 <div className=" p-16 flex flex-col space-y-2">
                 <h1 className="leading-[30px] font-500 text-[24px] text-center pb-6">Welcome to Pharmanger</h1>
+                <div className="w-full h-14 grid grid-cols-2  border-b-2 gap-4">
+                  <Button variant="signIn" asChild>
+                      <Link href="/signUpBuyer">
+                        Sign up as a drug buyer
+                      </Link>
+                  </Button>
+                  <Button variant="signIn" asChild>
+                      <Link href="/signUpPharmacy">
+                        Sign up as Pharmacy
+                      </Link>
+                  </Button>
+                </div>
                    <div className="flex justify-center items-center">
                     <Form {...form}>
                     <form className="space-y-8">
@@ -144,4 +156,4 @@ const SignUp = () => {
         </div>
     )
 }
-export default SignUp;
+export default SignUpBuyer;

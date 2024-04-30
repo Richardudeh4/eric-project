@@ -78,7 +78,7 @@ const SignIn = () => {
                             </Button> */}
                             <div className="flex space-x-2 ">
                             <h1>Don't have an account</h1>
-                            <Link href="/signUp" className="hover:text-blue-800 hover:underline text-blue-500"> Create an Account?</Link>
+                            <Link href="/signUpBuyer" className="hover:text-blue-800 hover:underline text-blue-500"> Create an Account?</Link>
                             </div>
 
                       
